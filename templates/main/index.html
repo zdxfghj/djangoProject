@@ -1,0 +1,52 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+ {% block menu %}
+     <ul class="menu">
+           <li class="selected"><a href="{% url 'home' %}">Главная</a></li>
+           <li><a href="{% url 'film' %}">Фильмы</a></li>
+           <li><a href="{% url 'rating' %}">Рейтинг</a></li>
+           <li><a href="{% url 'contact' %}">Контакты</a></li>
+  	 </ul>
+ {% endblock %}
+
+{% block body %}
+    <div class="content">
+        	 	
+        	 	<h1>Новые фильмы</h1>
+
+        	 	<div class="film_block">
+        	 		<a href="{% url 'show' %}"><img src="{% static 'img/matrix.png' %}"></a>
+        	 		<a href="{% url 'show' %}"><img src="{% static 'img/max.png' %}"></a>
+        	 		<a href="{% url 'show' %}"><img src="{% static 'img/inter.png' %}"></a>
+        	 		<a href="{% url 'show' %}"><img src="{% static 'img/cloud.png' %}"></a>
+
+        	 	</div>
+                
+                <h1>Новые сериалы</h1>
+
+        	 	<div class="film_block">
+        	 		
+        	 		<a href="{% url 'show' %}"><img src="{% static 'img/dead.png' %}"></a>
+        	 		<a href="{% url 'show' %}"><img src="{% static 'img/silicon.png' %}"></a>
+        	 		<a href="{% url 'show' %}"><img src="{% static 'img/breakingbad.png' %}"></a>
+        	 		<a href="{% url 'show' %}"><img src="{% static 'img/xfiles.png' %}"></a>
+
+        	 	</div>
+
+        	  </div>
+    <div class="content_info">
+            	<hr>
+            	<h1><a href="{% url 'show' %}">Как снимали Интерстеллар</a></h1>
+                     <div class="post_content">
+              <p>45 лет исполнилось Кристоферу Нолану — одному из самых успешных режиссеров нашего времени, чьи работы одинаково любимы как взыскательными критиками, так и простыми зрителями. Фильмом изначально занималась студия Paramount. Когда Кристофер Нолан занял место режиссера, студия Warner Bros., которая выпускала его последние фильмы, добилась участия в проекте.</p>
+                    
+               <a href="{% url 'show' %}">читать</a>
+                 <hr>
+               <h1><a href="{% url 'show' %}">Актер Том Хенкс поделился впечатлением о фестивале</a></h1>
+                
+              <p>16 февраля в Лондоне состоялась 67-я церемония вручения наград Британской киноакадемии. Леонардо ДиКаприо, Брэд Питт, Анджелина Джоли, Кейт Бланшетт, Хелен Миррен, Эми Адамс, Кристиан Бэйл, Альфонсо Куарон и другие гости и победители премии — в нашем репортаже.</p>
+                  </div>
+               <a href="{% url 'show' %}">читать</a>
+            </div>
+{%  endblock %}

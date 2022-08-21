@@ -1,0 +1,68 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block menu %}
+     <ul class="menu">
+           <li><a href="{% url 'home' %}">Главная</a></li>
+           <li><a href="{% url 'film' %}">Фильмы</a></li>
+           <li><a href="{% url 'rating' %}">Рейтинг</a></li>
+           <li><a href="{% url 'contact' %}">Контакты</a></li>
+  	 </ul>
+ {% endblock %}
+
+{% block body %}
+          <div class="content">
+
+               <h1>Интерстеллар</h1>
+
+                 <iframe width="560" height="315" src="https://www.youtube.com/embed/qcPfI0y7wRU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+               <div class="info_film_page">
+                   {% for el in movie %}
+                        <span class="label">рейтинг: </span><span class="value">{{ el.rating }}/10</span>
+                        <span class="label">год: </span><span class="value">{{ el.year }}</span>
+                        <span class="label">режиссер: </span><span class="value">{{ el.director }}</span>
+                   {% endfor %}
+               </div>
+                <hr>
+                <h2>Описание Интерстеллар</h2>
+                <div class="description_film">
+                  <img src="assets/img/inter.png">
+                  Когда засуха, пыльные бури и вымирание растений приводят человечество к продовольственному кризису, коллектив исследователей и учёных отправляется сквозь червоточину (которая предположительно соединяет области пространства-времени через большое расстояние) в путешествие, чтобы превзойти прежние ограничения для космических путешествий человека и найти планету с подходящими для человечества условиями.
+                </div>
+
+              <hr>
+              <h2>Отзывы об Интерстеллар</h2>
+                 <div class="reviews">
+                      <div class="review_name">
+                        Сергей
+                        </div>
+                     <div class="review_text">
+                       Отичный фильм, 3 часа смотрел!!!
+                     </div>
+                 </div>
+                 <div class="reviews">
+                        <div class="review_name">
+                          Дмитрий
+                        </div>
+                      <div class="review_text">
+                       После фильма Начало, я с не терпением ждал еще работ от Кристофера Нолана.
+                       Интерстеллар меня впечатлил.
+                      </div>
+                 </div>
+
+                     <div class="send">
+
+                       <form method="post" action="#" id="review">
+
+                         <input type="text" name="review_name" placeholder="ваше имя">
+                         <textarea name="review_text"></textarea>
+                         <input type="submit" class="btn" value="отправить" >
+
+                       </form>
+
+                     </div>
+
+                 </div>
+
+{%  endblock %}
