@@ -113,10 +113,26 @@
         <!-- Главный контент -->
         <main class="main-content">
             <!-- Все содержимое страниц надо помещать здесь -->
-            <h1>Фильмы</h1>
-            {% for movie in movie_list %}
-                  <a  href="{% url 'admins:update' movie.id %}">{{ movie.title }}</a>
-            {% endfor %}
+            <h1>{{ movie.title }}</h1>
+            <form method="post"   action="">
+                {% csrf_token %}
+                <label for="">Title</label>
+                <input type="text" name=" title" value="{{ movie.title }}"><br>
+                 <label for="">rating</label>
+                <input type="text" name="rating" value="{{ movie.rating}}"><br>
+                 <label for="">year</label>
+                <input type="text" name="year" value="{{ movie.year}}"><br>
+                 <label for="">director</label>
+                <input type="text" name="director" value="{{ movie.director}}"><br>
+                 <label for="">description</label>
+                <input type="text" name="description" value="{{ movie.description}}"><br>
+                 <label for="">link</label>
+                <input type="text" name="link" value="{{ movie.link}}"><br>
+                 <label for="">visit_count</label>
+                <input type="text" name="visit_count" value="{{ movie.visit_count}}"><br>
+                <input type="submit" name="save" value="save"><br>
+
+            </form>
         </main>
 
 

@@ -7,6 +7,10 @@ from django.urls import reverse
 
 
 def index(request):
+    movie_list = Movie_model.objects.all()
+    return render(request, 'admins/index.html',{'movie_list': movie_list})
 
-    return render(request, 'admins/index.html',)
+def update(request, movie_id):
+    movie = Movie_model.objects.get(pk=movie_id)
+    return render(request, 'admins/update.html',{'movie': movie})
 
