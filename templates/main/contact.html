@@ -3,10 +3,10 @@
 
 {% block menu %}
      <ul class="menu">
-           <li><a href="{% url 'home' %}">Главная</a></li>
-           <li><a href="{% url 'film' %}">Фильмы</a></li>
-           <li><a href="{% url 'rating' %}">Рейтинг</a></li>
-           <li class="selected"><a href="{% url 'contact' %}">Контакты</a></li>
+           <li><a href="{% url 'main:home' %}">Главная</a></li>
+           <li><a href="{% url 'main:film' %}">Фильмы</a></li>
+           <li><a href="{% url 'main:rating' %}">Рейтинг</a></li>
+           <li class="selected"><a href="{% url 'main:contact' %}">Контакты</a></li>
   	 </ul>
  {% endblock %}
 
