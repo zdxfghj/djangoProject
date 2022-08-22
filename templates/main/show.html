@@ -10,25 +10,26 @@
   	 </ul>
  {% endblock %}
 
+
 {% block body %}
           <div class="content">
 
-               <h1>Интерстеллар</h1>
+               <h1>{{movie.title}}</h1>
 
                  <iframe width="560" height="315" src="https://www.youtube.com/embed/qcPfI0y7wRU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
                <div class="info_film_page">
-                   {% for el in movie %}
-                        <span class="label">рейтинг: </span><span class="value">{{ el.rating }}/10</span>
-                        <span class="label">год: </span><span class="value">{{ el.year }}</span>
-                        <span class="label">режиссер: </span><span class="value">{{ el.director }}</span>
-                   {% endfor %}
+
+                        <span class="label">рейтинг: </span><span class="value">{{ movie.rating }}/10</span>
+                        <span class="label">год: </span><span class="value">{{ movie.year }}</span>
+                        <span class="label">режиссер: </span><span class="value">{{ movie.director }}</span>
+
                </div>
                 <hr>
-                <h2>Описание Интерстеллар</h2>
+                <h2>Описание {{movie.title}}</h2>
                 <div class="description_film">
-                  <img src="assets/img/inter.png">
-                  Когда засуха, пыльные бури и вымирание растений приводят человечество к продовольственному кризису, коллектив исследователей и учёных отправляется сквозь червоточину (которая предположительно соединяет области пространства-времени через большое расстояние) в путешествие, чтобы превзойти прежние ограничения для космических путешествий человека и найти планету с подходящими для человечества условиями.
+                  <img src="{{movie.img.url}}">
+                 {{movie.description}}
                 </div>
 
               <hr>
