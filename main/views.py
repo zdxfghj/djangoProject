@@ -38,4 +38,4 @@ def add_review(request):
     movie = Movie_model.objects.get(pk=request.POST["movie"])
     review = Review(name_user=request.POST['review_name'], description=request.POST["review_text"], movie=movie)
     review.save()
-    return HttpResponseRedirect(reverse('show', args=[request.POST["movie"]]))
+    return HttpResponseRedirect(reverse('main:show', args=[request.POST["movie"]]))
